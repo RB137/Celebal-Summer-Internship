@@ -1,0 +1,148 @@
+/* ========== Reset & Base Styles ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9fb;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ========== Header & Navigation ========== */
+header {
+  background-color: #121212;
+  color: white;
+  padding: 1rem 0;
+  position: relative;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+nav {
+  position: relative;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-menu li a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  transition: background 0.3s;
+  border-radius: 5px;
+}
+
+.nav-menu li a:hover {
+  background-color: #1e1e1e;
+}
+
+/* ========== Hamburger Menu ========== */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: white;
+}
+
+#toggle-menu {
+  display: none;
+}
+
+/* ========== Layout Grid ========== */
+.layout {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+/* ========== Main Content ========== */
+main {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* ========== Sidebar ========== */
+aside {
+  background-color: #fff;
+  padding: 2rem;
+  border-left: 5px solid #007acc;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+aside h2 {
+  margin-bottom: 1rem;
+}
+
+aside ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+aside li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+/* ========== Footer ========== */
+footer {
+  background-color: #121212;
+  color: white;
+  padding: 1.5rem 0;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* ========== Media Queries ========== */
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #1e1e1e;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    padding: 1rem;
+    z-index: 10;
+  }
+
+  #toggle-menu:checked + .hamburger + .nav-menu {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
