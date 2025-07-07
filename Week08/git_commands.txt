@@ -1,0 +1,61 @@
+
+1. Stage all changes and commit with a meaningful message:
+git add .
+git commit -m "Your meaningful commit message"
+
+2. Move commits to the correct branch (committed to the wrong branch):
+# Step 1: Create and switch to the correct branch (commits move with it)
+git checkout -b correct-branch
+
+# Step 2: Go back to the wrong branch and remove the commits
+git checkout wrong-branch
+git reset --hard HEAD~n   # Replace 'n' with number of wrong commits
+
+3. Create a new branch, make changes, and push to remote:
+git checkout main
+git pull origin main
+git checkout -b new-feature
+# Make your changes
+git add .
+git commit -m "Add new feature"
+git push origin new-feature
+
+4. Contribute to an open-source project (Fork, Clone, PR):
+# Step 1: Fork the repository on GitHub
+# Step 2: Clone your fork
+git clone https://github.com/your-username/repo-name.git
+cd repo-name
+
+# Step 3: Create a branch for your changes
+git checkout -b feature-branch
+
+# Step 4: Make changes, commit, and push
+git add .
+git commit -m "Your change description"
+git push origin feature-branch
+
+# Step 5: Go to GitHub and open a Pull Request
+
+5. Resolve merge conflicts with main branch:
+git checkout main
+git pull origin main
+git checkout your-branch
+git merge main
+
+# Resolve conflicts manually in files
+git add .
+git commit -m "Resolved merge conflicts"
+
+6. Create feature branch from the latest main branch:
+git checkout main
+git pull origin main
+git checkout -b feature-branch
+
+7. Revert to a specific commit (discard changes after it):
+git log                          # Copy the commit hash
+git reset --hard <commit-hash>  # Discard all changes after this commit
+
+8. Restore a deleted file that was committed:
+git checkout HEAD^ -- path/to/file
+git add path/to/file
+git commit -m "Restore deleted file"
